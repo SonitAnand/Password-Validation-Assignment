@@ -25,5 +25,9 @@ public class PasswordValidator {
 		// check for password should be larger than 8 chars
 		if (password.length() <= 8)
 			throw new RuntimeException("Password length should be larger than 8 chars.");
+
+		// check for password should have one uppercase letter at least
+		if (!password.matches(".*[A-Z].*"))
+			throw new RuntimeException("Password should have at least one uppercase letter.");
 	}
 }
