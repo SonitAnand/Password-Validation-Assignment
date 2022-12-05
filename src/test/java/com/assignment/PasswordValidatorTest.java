@@ -18,4 +18,12 @@ class PasswordValidatorTest {
 		assertEquals("Password cannot be empty or blank.", exception.getMessage());
 	}
 
+	@Test
+	void shouldCheckPasswordForLength() throws Exception {
+		Throwable exception = assertThrows(Exception.class, () -> {
+			PasswordValidator.isValidPassword("admin@1");
+		});
+		assertEquals("Password length should be larger than 8 chars.", exception.getMessage());
+	}
+
 }
