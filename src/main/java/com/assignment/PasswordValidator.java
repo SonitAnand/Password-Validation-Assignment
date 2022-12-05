@@ -29,5 +29,9 @@ public class PasswordValidator {
 		// check for password should have one uppercase letter at least
 		if (!password.matches(".*[A-Z].*"))
 			throw new RuntimeException("Password should have at least one uppercase letter.");
+
+		// check for password should have one lowercase letter at least
+		if (!password.matches(".*[a-z].*"))
+			throw new RuntimeException("Password should have at least one lowercase letter.");
 	}
 }
