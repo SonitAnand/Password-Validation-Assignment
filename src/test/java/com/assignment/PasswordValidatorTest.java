@@ -34,4 +34,12 @@ class PasswordValidatorTest {
 		assertEquals("Password should have at least one uppercase letter.", exception.getMessage());
 	}
 
+	@Test
+	void shouldCheckPasswordForLowerCase() throws Exception {
+		Throwable exception = assertThrows(Exception.class, () -> {
+			PasswordValidator.isValidPassword("ADMIN@123453");
+		});
+		assertEquals("Password should have at least one lowercase letter.", exception.getMessage());
+	}
+
 }
