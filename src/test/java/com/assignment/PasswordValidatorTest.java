@@ -1,6 +1,7 @@
 package com.assignment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +11,11 @@ import org.junit.jupiter.api.Test;
 class PasswordValidatorTest {
 
 	@Test
-	void shouldCheckPasswordIsEmpty() {
-		assertEquals("Password cannot be empty or blank.", "Password cannot be empty or blank.");
+	void shouldCheckPasswordIsEmpty() throws Exception {
+		Throwable exception = assertThrows(Exception.class, () -> {
+			PasswordValidator.isValidPassword("");
+		});
+		assertEquals("Password cannot be empty or blank.", exception.getMessage());
 	}
 
 }
