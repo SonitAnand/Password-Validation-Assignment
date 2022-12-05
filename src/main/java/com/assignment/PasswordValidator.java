@@ -15,8 +15,11 @@ public class PasswordValidator {
 	 * Checks if is valid password.
 	 *
 	 * @param password the password
+	 * @throws RuntimeException the runtime exception
 	 */
-	public static void isValidPassword(String password) {
-		// logic to be added for password rules
+	public static void isValidPassword(String password) throws RuntimeException {
+		// check for password should not be null
+		if (password.equals("") || password.length() == 0)
+			throw new RuntimeException("Password cannot be empty or blank.");
 	}
 }
