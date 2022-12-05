@@ -27,7 +27,7 @@ public class PasswordValidator {
 	 * @param password the password
 	 * @throws RuntimeException the runtime exception
 	 */
-	public static void isValidPassword(String password) throws PasswordCheckException {
+	public static boolean isValidPassword(String password) throws PasswordCheckException {
 
 		List<String> errorList = new ArrayList<>();
 
@@ -55,5 +55,6 @@ public class PasswordValidator {
 		if (errorList.size() > 2 || !password.matches(".*[a-z].*")) {
 			throw new PasswordCheckException(errorList.toString());
 		}
+		return true;
 	}
 }
