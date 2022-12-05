@@ -21,5 +21,9 @@ public class PasswordValidator {
 		// check for password should not be null
 		if (password.equals("") || password.length() == 0)
 			throw new RuntimeException("Password cannot be empty or blank.");
+
+		// check for password should be larger than 8 chars
+		if (password.length() <= 8)
+			throw new RuntimeException("Password length should be larger than 8 chars.");
 	}
 }
